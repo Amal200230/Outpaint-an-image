@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 # Load the image (use raw string or forward slashes in the path)
-image_path = r"C:/Users/Amal/Downloads/assignment.png"
+image_path = r"PATH WHERE THE IMAGE IS STORED.png"
 image = Image.open(image_path)
 image_array = np.array(image)
 
@@ -19,4 +19,4 @@ new_image_array[128:128+original_height, 128:128+original_width] = image_array
 
 # Save the outpainted image
 new_image = Image.fromarray(new_image_array)
-new_image.save(r"C:/Users/Amal/OneDrive/Desktop/amal/outpainted_image.png")
+new_image.save(r"PATH WHERE YOU WANT TO SAVE THE IMAGE.png")
