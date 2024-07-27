@@ -1,0 +1,22 @@
+from PIL import Image
+import numpy as np
+
+# Load the image (use raw string or forward slashes in the path)
+image_path = r"C:/Users/Amal/Downloads/assignment.png"
+image = Image.open(image_path)
+image_array = np.array(image)
+
+# Define new size
+original_height, original_width, _ = image_array.shape
+new_height = original_height + 256
+new_width = original_width + 256
+
+# Create a new canvas
+new_image_array = np.zeros((new_height, new_width, 3), dtype=np.uint8)
+
+# Place the original image in the center
+new_image_array[128:128+original_height, 128:128+original_width] = image_array
+
+# Save the outpainted image
+new_image = Image.fromarray(new_image_array)
+new_image.save(r"C:/Users/Amal/OneDrive/Desktop/amal/outpainted_image.png")
